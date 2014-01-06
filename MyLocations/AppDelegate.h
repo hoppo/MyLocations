@@ -5,9 +5,6 @@
 //  Created by John Hopkins on 05/01/2014.
 //  Copyright (c) 2014 cocoacoda. All rights reserved.
 //
-//  Added a comment
-
-#import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
