@@ -91,6 +91,12 @@
     
 }
 
+- (IBAction)categoryPickerDidPickCategory: (UIStoryboardSegue *)segue
+{
+    CategoryPickerViewController *viewController =
+    segue.sourceViewController; _categoryName = viewController.selectedCategoryName;
+    self.categoryLabel.text = _categoryName; }
+
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
