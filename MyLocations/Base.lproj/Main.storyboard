@@ -322,7 +322,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="srs-89-kfX" kind="unwind" unwindAction="categoryPickerDidPickCategory:" id="zP5-2y-cTW"/>
+                                    <segue destination="srs-89-kfX" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="zP5-2y-cTW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
