@@ -7,6 +7,7 @@
 //
 
 #import "LocationDetailsViewController.h"
+#import "CategoryPickerViewController.h"
 
 @interface LocationDetailsViewController () <UITextViewDelegate>
 
@@ -22,12 +23,14 @@
 @implementation LocationDetailsViewController
 {
     NSString *_descriptionText;
+    NSString *_categoryName;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
         _descriptionText = @"";
+        _categoryName = @"No Category";
     }
     return self;
 }
@@ -35,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.descriptionTextView.text = _descriptionText;
+    self.categoryLabel.text = _categoryName;
     self.categoryLabel.text = @"";
     self.latitudeLabel.text = [NSString stringWithFormat:
                                @"%.8f", self.coordinate.latitude];
@@ -71,6 +75,13 @@
     
     [self closeScreen];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PickCategory"]) {
+        CategoryPickerViewController *controller = segue.destinationViewController;
+        controller.selectedCategoryName = _categoryName; }
 }
 
 - (void)closeScreen
