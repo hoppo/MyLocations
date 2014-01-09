@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
+            <point key="canvasLocation" x="885" y="-182"/>
         </scene>
         <!--Locations View Controller - Locations-->
         <scene sceneID="OFb-qd-SpR">
@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Location" rowHeight="57" id="FxO-ei-JsN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Location" rowHeight="57" id="FxO-ei-JsN" customClass="LocationCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FxO-ei-JsN" id="5gO-xy-G8J">
@@ -118,6 +118,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="28B-Ie-qLP" id="VWa-WE-iF6"/>
+                                    <outlet property="descriptionLabel" destination="TNh-7q-gFs" id="Zy6-Z8-dV7"/>
+                                    <segue destination="TZt-SK-aiI" kind="modal" identifier="EditLocation" id="UFd-nH-Erl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -351,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCk-tQ-jS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="-139"/>
+            <point key="canvasLocation" x="2122" y="202"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="ARi-Aw-IhQ">
@@ -393,7 +398,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOJ-Q7-zp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="srs-89-kfX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2003" y="-142"/>
+            <point key="canvasLocation" x="2595" y="202"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -430,7 +435,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4A1-tF-kfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104" y="-139"/>
+            <point key="canvasLocation" x="1640" y="202"/>
         </scene>
     </scenes>
     <resources>
@@ -441,4 +446,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="nVa-Ph-VTJ"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,8 @@
 
 #import "LocationsViewController.h"
 #import "Location.h"
+#import "LocationCell.h"
+#import "LocationDetailsViewController.h"
 
 @implementation LocationsViewController
 {
@@ -38,6 +40,21 @@
     _locations = foundObjects;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditLocation"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        LocationDetailsViewController *controller = (LocationDetailsViewController *) navigationController.topViewController;
+        
+        controller.managedObjectContext = self.managedObjectContext;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        Location *location = _locations[indexPath.row];
+        controller.locationToEdit = location;
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -49,15 +66,24 @@
 
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location"];
-    
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    LocationCell *locationCell = (LocationCell *)cell;
     Location *location = _locations[indexPath.row];
     
-    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:100];
-    descriptionLabel.text = location.locationDescription;
-    
-    UILabel *addressLabel = (UILabel *)[cell viewWithTag:101];
-    addressLabel.text = [NSString stringWithFormat:@"%@ %@, %@", location.placemark.subThoroughfare, location.placemark.thoroughfare, location.placemark.locality];
-    return cell;
+    if ([location.locationDescription length] > 0) {
+        locationCell.descriptionLabel.text = location.locationDescription;
+    } else {
+        locationCell.descriptionLabel.text = @"(No Description)";
+    }
+    if (location.placemark != nil) { locationCell.addressLabel.text = [NSString stringWithFormat:@"%@ %@, %@", location.placemark.subThoroughfare, location.placemark.thoroughfare, location.placemark.locality];
+    } else {
+        locationCell.addressLabel.text = [NSString stringWithFormat: @"Lat: %.8f, Long: %.8f", [location.latitude doubleValue], [location.longitude doubleValue]];
+    }
 }
 
 @end

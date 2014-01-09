@@ -39,8 +39,14 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    if (self.locationToEdit != nil) {
+        self.title = @"Edit Location";
+    }
+    
     self.descriptionTextView.text = _descriptionText;
     self.categoryLabel.text = _categoryName;
     self.categoryLabel.text = @"";
@@ -58,6 +64,18 @@
     gestureRecognizer.cancelsTouchesInView = NO; [self.tableView addGestureRecognizer:gestureRecognizer];
 }
 
+- (void)setLocationToEdit:(Location *)newLocationToEdit
+{
+    if (_locationToEdit != newLocationToEdit) { _locationToEdit = newLocationToEdit;
+        _descriptionText = _locationToEdit.locationDescription;
+        _categoryName = _locationToEdit.category;
+        _date = _locationToEdit.date;
+        self.coordinate = CLLocationCoordinate2DMake( [_locationToEdit.latitude doubleValue],
+                                                     [_locationToEdit.longitude doubleValue]);
+        self.placemark = _locationToEdit.placemark;
+    }
+}
+
 - (NSString *)stringFromPlacemark:(CLPlacemark *)placemark {
     return [NSString stringWithFormat:@"%@ %@, %@, %@ %@, %@", placemark.subThoroughfare, placemark.thoroughfare, placemark.locality, placemark.administrativeArea, placemark.postalCode, placemark.country];
 }
@@ -72,9 +90,15 @@
 - (IBAction)done:(id)sender
 {
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
-    hudView.text = @"Tagged";
     
-    Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    Location *location = nil;
+    if (self.locationToEdit != nil) {
+        hudView.text = @"Updated";
+        location = self.locationToEdit;
+    } else {
+        hudView.text = @"Tagged";
+        location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    }
     
     location.locationDescription = _descriptionText;
     location.category = _categoryName;

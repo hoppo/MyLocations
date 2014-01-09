@@ -13,6 +13,7 @@
 		4C4D3539187EC9E300A92637 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C4D3537187EC9E300A92637 /* DataModel.xcdatamodeld */; };
 		4C4D353C187ECBCE00A92637 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4D353B187ECBCE00A92637 /* Location.m */; };
 		4C4D3542187EF94000A92637 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4D3541187EF94000A92637 /* LocationsViewController.m */; };
+		4C4D3545187F140400A92637 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4D3544187F140400A92637 /* LocationCell.m */; };
 		4C66B11E187B190E00D64671 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C66B11D187B190E00D64671 /* LocationDetailsViewController.m */; };
 		4C9C789F1879D42900201E0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C789E1879D42900201E0B /* Foundation.framework */; };
 		4C9C78A11879D42900201E0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C78A01879D42900201E0B /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		4C4D353B187ECBCE00A92637 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		4C4D3540187EF94000A92637 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
 		4C4D3541187EF94000A92637 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		4C4D3543187F140400A92637 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		4C4D3544187F140400A92637 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		4C66B11C187B190E00D64671 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		4C66B11D187B190E00D64671 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		4C9C789B1879D42900201E0B /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +149,8 @@
 				4C4D353B187ECBCE00A92637 /* Location.m */,
 				4C9C78AD1879D42900201E0B /* AppDelegate.h */,
 				4C9C78AE1879D42900201E0B /* AppDelegate.m */,
+				4C4D3543187F140400A92637 /* LocationCell.h */,
+				4C4D3544187F140400A92637 /* LocationCell.m */,
 				4C2C06D6187DABA1007FC3DE /* CategoryPickerViewController.h */,
 				4C2C06D7187DABA1007FC3DE /* CategoryPickerViewController.m */,
 				4C4D3540187EF94000A92637 /* LocationsViewController.h */,
@@ -299,6 +304,7 @@
 				4C2C06DB187DEF1F007FC3DE /* HudView.m in Sources */,
 				4C4D3542187EF94000A92637 /* LocationsViewController.m in Sources */,
 				4C2C06D8187DABA1007FC3DE /* CategoryPickerViewController.m in Sources */,
+				4C4D3545187F140400A92637 /* LocationCell.m in Sources */,
 				4C66B11E187B190E00D64671 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
