@@ -35,7 +35,6 @@
         _descriptionText = @"";
         _categoryName = @"No Category";
         _date = [NSDate date];
-        NSLog(@"The Date %@", _date);
     }
     return self;
 }
@@ -86,8 +85,8 @@
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Error: %@", error);
-        abort();
+        FATAL_CORE_DATA_ERROR(error);
+        return;
     }
     
     [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
