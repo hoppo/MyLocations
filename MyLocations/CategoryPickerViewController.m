@@ -28,7 +28,7 @@
                     @"Nightclub",
                     @"Shop",
                     @"Historic Building",
-                    @"House",
+                    @"Street",
                     @"Cafe",
                     @"Landmark",
                     @"Park"];
