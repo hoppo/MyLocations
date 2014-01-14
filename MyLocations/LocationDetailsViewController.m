@@ -19,6 +19,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *longitudeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *addressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *photoLabel;
 
 @end
 
@@ -27,6 +29,7 @@
     NSString *_descriptionText;
     NSString *_categoryName;
     NSDate *_date;
+    UIImage *_image;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -62,6 +65,14 @@
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
     gestureRecognizer.cancelsTouchesInView = NO; [self.tableView addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)showImage:(UIImage *)image
+{
+    self.imageView.image = image;
+    self.imageView.hidden = NO;
+    self.imageView.frame = CGRectMake(10, 10, 260, 260);
+    self.photoLabel.hidden = YES;
 }
 
 - (void)setLocationToEdit:(Location *)newLocationToEdit
@@ -188,9 +199,15 @@
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
         return 88;
-    } else if (indexPath.section == 2 && indexPath.row == 2) {
-        
-        
+    } else if (indexPath.section == 1) {
+        if (self.imageView.hidden) {
+            return 44;
+        } else {
+            return 280;
+        }
+    }
+        else if (indexPath.section == 2 && indexPath.row == 2)
+    {
         CGRect rect = CGRectMake(100, 10, 205, 10000);
         self.addressLabel.frame = rect;
         [self.addressLabel sizeToFit];
@@ -218,6 +235,7 @@
         [self.descriptionTextView becomeFirstResponder];
     } else if (indexPath.section == 1 && indexPath.row == 0)
         {
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
             [self showPhotoMenu];
         }
 }
@@ -239,12 +257,29 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    _image = info[UIImagePickerControllerEditedImage];
+    [self showImage:_image];
+    [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel: (UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        [self takePhoto];
+    }
+        else if (buttonIndex == 1)
+    {
+        [self choosePhotoFromLibrary];
+    }
 }
 
 @end
