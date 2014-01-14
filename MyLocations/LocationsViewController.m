@@ -114,6 +114,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location"];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+    
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -130,6 +131,13 @@
     } else {
         locationCell.addressLabel.text = [NSString stringWithFormat: @"Lat: %.8f, Long: %.8f", [location.latitude doubleValue], [location.longitude doubleValue]];
     }
+    
+    UIImage *image = nil;
+    if ([location hasPhoto]) {
+        image = [location photoImage];
+    }
+    
+    locationCell.photoImageView.image = image;
 }
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView
