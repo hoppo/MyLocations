@@ -9,7 +9,7 @@
 #import "MapViewController.h"
 #import "LocationDetailsViewController.h"
 
-@interface MapViewController () <MKMapViewDelegate>
+@interface MapViewController () <MKMapViewDelegate, UINavigationBarDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
@@ -18,6 +18,28 @@
 @implementation MapViewController
 {
     NSArray *_locations;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contextDidChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:self.managedObjectContext];
+    }
+    return self;
+}
+
+- (void)contextDidChange:(NSNotification *)notification
+{
+    if ([self isViewLoaded])
+    {
+        [self updateLocations];
+    }
 }
 
 - (IBAction)showUser
@@ -153,6 +175,13 @@
 - (void)showLocationDetails:(UIButton *)button
 {
     [self performSegueWithIdentifier:@"EditLocation" sender:button];
+}
+
+#pragma mark - UINavigationBarDelegate
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
+{
+    return UIBarPositionTopAttached;
 }
 
 @end
