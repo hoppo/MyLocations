@@ -74,5 +74,18 @@
     return photoId;
 }
 
+- (void)removePhotoFile
+{
+    NSString *path = [self photoPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path])
+    {
+        NSError *error;
+        if (![fileManager removeItemAtPath:path error:&error])
+        {
+            NSLog(@"Error removing file: %@", error); }
+    }
+}
+
 @end
 
