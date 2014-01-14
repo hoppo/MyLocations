@@ -23,6 +23,7 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+   [self customizeAppearance];
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
@@ -44,6 +45,13 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Internal Error", nil) message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
     [alertView show];
+}
+
+- (void)customizeAppearance
+{
+    [[UINavigationBar appearance] setBarTintColor: [UIColor blackColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor], }];
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
