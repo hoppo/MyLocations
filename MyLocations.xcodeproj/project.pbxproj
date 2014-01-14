@@ -33,6 +33,7 @@
 		4C9C78CB1879D42900201E0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C78C91879D42900201E0B /* InfoPlist.strings */; };
 		4C9C78CD1879D42900201E0B /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C78CC1879D42900201E0B /* MyLocationsTests.m */; };
 		4C9C78D71879DB6C00201E0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C78D61879DB6C00201E0B /* CoreLocation.framework */; };
+		4CA3060D1885F9F000BE3FA6 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3060C1885F9F000BE3FA6 /* NSMutableString+AddText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		4C9C78CA1879D42900201E0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C9C78CC1879D42900201E0B /* MyLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsTests.m; sourceTree = "<group>"; };
 		4C9C78D61879DB6C00201E0B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4CA3060B1885F9F000BE3FA6 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
+		4CA3060C1885F9F000BE3FA6 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				4C2C06DA187DEF1F007FC3DE /* HudView.m */,
 				4C9C78B31879D42900201E0B /* CurrentLocationViewController.h */,
 				4C9C78B41879D42900201E0B /* CurrentLocationViewController.m */,
+				4CA3060B1885F9F000BE3FA6 /* NSMutableString+AddText.h */,
+				4CA3060C1885F9F000BE3FA6 /* NSMutableString+AddText.m */,
 				4C9C78B61879D42900201E0B /* SecondViewController.h */,
 				4C9C78B71879D42900201E0B /* SecondViewController.m */,
 				4C9C78B91879D42900201E0B /* Images.xcassets */,
@@ -315,6 +320,7 @@
 				4C4D3542187EF94000A92637 /* LocationsViewController.m in Sources */,
 				4C2C06D8187DABA1007FC3DE /* CategoryPickerViewController.m in Sources */,
 				4C4D3545187F140400A92637 /* LocationCell.m in Sources */,
+				4CA3060D1885F9F000BE3FA6 /* NSMutableString+AddText.m in Sources */,
 				4C66B11E187B190E00D64671 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
