@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "LocationDetailsViewController.h"
 
 @interface MapViewController () <MKMapViewDelegate>
 
@@ -106,6 +107,19 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditLocation"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        LocationDetailsViewController *controller = (LocationDetailsViewController *)
+        navigationController.topViewController;
+        controller.managedObjectContext = self.managedObjectContext;
+        UIButton *button = (UIButton *)sender;
+        Location *location = _locations[button.tag];
+        controller.locationToEdit = location;
+    }
+}
+
 #pragma mark - MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -138,7 +152,7 @@
 
 - (void)showLocationDetails:(UIButton *)button
 {
-    
+    [self performSegueWithIdentifier:@"EditLocation" sender:button];
 }
 
 @end
