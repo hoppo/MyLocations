@@ -80,7 +80,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tag" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Tag" image="Tag" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="addressLabel" destination="soX-zZ-IF5" id="xwF-CL-khx"/>
                         <outlet property="getButton" destination="SsK-Cb-IUS" id="Rd5-pi-ggi"/>
@@ -149,7 +149,7 @@
         <scene sceneID="8T4-54-uvd">
             <objects>
                 <navigationController definesPresentationContext="YES" id="kxu-qv-oD7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="B9q-WS-JN6"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="B9q-WS-JN6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gXb-an-DY7">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -419,10 +419,10 @@
             </objects>
             <point key="canvasLocation" x="2595" y="202"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
-                <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
+                <tabBarController id="8YX-ce-x5E" customClass="MyTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -459,12 +459,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Map" id="tH4-q8-1Mx">
-                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="fue-WG-r5H">
+                                        <barButtonItem key="leftBarButtonItem" image="Pin" id="fue-WG-r5H">
                                             <connections>
                                                 <action selector="showLocations" destination="sKb-P2-btM" id="IoN-LX-mIW"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="User" id="LIb-wf-fYu">
+                                        <barButtonItem key="rightBarButtonItem" image="User" id="LIb-wf-fYu">
                                             <connections>
                                                 <action selector="showUser" destination="sKb-P2-btM" id="Mgu-cC-04s"/>
                                             </connections>
@@ -478,7 +478,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="7Dd-Wy-w3x"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="7Dd-Wy-w3x"/>
                     <connections>
                         <outlet property="mapView" destination="Euy-re-HiR" id="ImO-LQ-6Y6"/>
                         <segue destination="TZt-SK-aiI" kind="modal" identifier="EditLocation" id="24M-3R-iM7"/>
@@ -488,10 +488,10 @@
             </objects>
             <point key="canvasLocation" x="885" y="1265"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="otH-OA-bTE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZt-SK-aiI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZt-SK-aiI" customClass="MyNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fj5-Wg-wiF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -508,7 +508,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Pin" width="24" height="24"/>
+        <image name="Tag" width="30" height="30"/>
+        <image name="User" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="1" green="0.93333333333333335" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

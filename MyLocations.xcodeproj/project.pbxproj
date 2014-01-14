@@ -25,7 +25,6 @@
 		4C9C78AF1879D42900201E0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C78AE1879D42900201E0B /* AppDelegate.m */; };
 		4C9C78B21879D42900201E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C78B01879D42900201E0B /* Main.storyboard */; };
 		4C9C78B51879D42900201E0B /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C78B41879D42900201E0B /* CurrentLocationViewController.m */; };
-		4C9C78B81879D42900201E0B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C78B71879D42900201E0B /* SecondViewController.m */; };
 		4C9C78BA1879D42900201E0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C78B91879D42900201E0B /* Images.xcassets */; };
 		4C9C78C11879D42900201E0B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C78C01879D42900201E0B /* XCTest.framework */; };
 		4C9C78C21879D42900201E0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C789E1879D42900201E0B /* Foundation.framework */; };
@@ -34,6 +33,8 @@
 		4C9C78CD1879D42900201E0B /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C78CC1879D42900201E0B /* MyLocationsTests.m */; };
 		4C9C78D71879DB6C00201E0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C78D61879DB6C00201E0B /* CoreLocation.framework */; };
 		4CA3060D1885F9F000BE3FA6 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3060C1885F9F000BE3FA6 /* NSMutableString+AddText.m */; };
+		4CA3062C1886033600BE3FA6 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3062B1886033600BE3FA6 /* MyTabBarController.m */; };
+		4CA3062F1886040100BE3FA6 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3062E1886040100BE3FA6 /* MyNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +78,6 @@
 		4C9C78B11879D42900201E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C9C78B31879D42900201E0B /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
 		4C9C78B41879D42900201E0B /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
-		4C9C78B61879D42900201E0B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4C9C78B71879D42900201E0B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		4C9C78B91879D42900201E0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C9C78BF1879D42900201E0B /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9C78C01879D42900201E0B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -88,6 +87,10 @@
 		4C9C78D61879DB6C00201E0B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4CA3060B1885F9F000BE3FA6 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
 		4CA3060C1885F9F000BE3FA6 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
+		4CA3062A1886033600BE3FA6 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		4CA3062B1886033600BE3FA6 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		4CA3062D1886040100BE3FA6 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
+		4CA3062E1886040100BE3FA6 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,10 @@
 			children = (
 				4C9C78B01879D42900201E0B /* Main.storyboard */,
 				4C4D3537187EC9E300A92637 /* DataModel.xcdatamodeld */,
+				4CA3062A1886033600BE3FA6 /* MyTabBarController.h */,
+				4CA3062B1886033600BE3FA6 /* MyTabBarController.m */,
+				4CA3062D1886040100BE3FA6 /* MyNavigationController.h */,
+				4CA3062E1886040100BE3FA6 /* MyNavigationController.m */,
 				4C4D353A187ECBCE00A92637 /* Location.h */,
 				4C4D353B187ECBCE00A92637 /* Location.m */,
 				4C9C78AD1879D42900201E0B /* AppDelegate.h */,
@@ -175,8 +182,6 @@
 				4C9C78B41879D42900201E0B /* CurrentLocationViewController.m */,
 				4CA3060B1885F9F000BE3FA6 /* NSMutableString+AddText.h */,
 				4CA3060C1885F9F000BE3FA6 /* NSMutableString+AddText.m */,
-				4C9C78B61879D42900201E0B /* SecondViewController.h */,
-				4C9C78B71879D42900201E0B /* SecondViewController.m */,
 				4C9C78B91879D42900201E0B /* Images.xcassets */,
 				4C9C78A51879D42900201E0B /* Supporting Files */,
 			);
@@ -309,10 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C9C78B81879D42900201E0B /* SecondViewController.m in Sources */,
 				4C4D3539187EC9E300A92637 /* DataModel.xcdatamodeld in Sources */,
+				4CA3062F1886040100BE3FA6 /* MyNavigationController.m in Sources */,
 				4C9C78AF1879D42900201E0B /* AppDelegate.m in Sources */,
 				4C7DBD8F1884B5BA00623D7C /* MapViewController.m in Sources */,
+				4CA3062C1886033600BE3FA6 /* MyTabBarController.m in Sources */,
 				4C9C78B51879D42900201E0B /* CurrentLocationViewController.m in Sources */,
 				4C4D353C187ECBCE00A92637 /* Location.m in Sources */,
 				4C9C78AB1879D42900201E0B /* main.m in Sources */,

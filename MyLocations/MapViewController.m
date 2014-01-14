@@ -157,6 +157,7 @@
             annotationView.canShowCallout = YES;
             annotationView.animatesDrop = NO;
             annotationView.pinColor = MKPinAnnotationColorGreen;
+            annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
        
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [rightButton addTarget:self action:@selector(showLocationDetails:) forControlEvents:UIControlEventTouchUpInside];
@@ -169,6 +170,7 @@
         button.tag = [_locations indexOfObject: (Location *)annotation];
         return annotationView;
     }
+    
     return nil;
 }
 
