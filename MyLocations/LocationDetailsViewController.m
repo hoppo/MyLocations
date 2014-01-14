@@ -11,7 +11,7 @@
 #import "HudView.h"
 #import "Location.h"
 
-@interface LocationDetailsViewController () <UITextViewDelegate>
+@interface LocationDetailsViewController () <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 @property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
@@ -143,12 +143,33 @@
     segue.sourceViewController; _categoryName = viewController.selectedCategoryName;
     self.categoryLabel.text = _categoryName; }
 
-- (void)hideKeyboard:(UIGestureRecognizer *)gestureRecognizer {
+- (void)hideKeyboard:(UIGestureRecognizer *)gestureRecognizer
+{
     CGPoint point = [gestureRecognizer locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
     if (indexPath != nil && indexPath.section == 0 && indexPath.row == 0) {
-        return; }
-    [self.descriptionTextView resignFirstResponder]; }
+        return;
+    }
+    [self.descriptionTextView resignFirstResponder];
+}
+
+- (void)takePhoto
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)choosePhotoFromLibrary
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
 
 #pragma mark - UITableViewDelegate
 
@@ -176,13 +197,18 @@
 {
     if (indexPath.section == 0 || indexPath.section == 1) {
         return indexPath; } else {
-            return nil; }
+            return nil;
+        }
 }
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        [self.descriptionTextView becomeFirstResponder]; }
+        [self.descriptionTextView becomeFirstResponder];
+    } else if (indexPath.section == 1 && indexPath.row == 0)
+        {
+            [self choosePhotoFromLibrary];
+        }
 }
 
 #pragma mark - UITextViewDelegate
@@ -196,6 +222,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     _descriptionText = textView.text;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel: (UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
