@@ -150,6 +150,9 @@
     locationCell.descriptionLabel.highlightedTextColor = locationCell.descriptionLabel.textColor;
     locationCell.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
     locationCell.addressLabel.highlightedTextColor = locationCell.addressLabel.textColor;
+    UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    locationCell.selectedBackgroundView = selectionView;
 }
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView
