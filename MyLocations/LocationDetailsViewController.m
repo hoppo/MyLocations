@@ -236,6 +236,7 @@
     _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     _imagePicker.delegate = self;
     _imagePicker.allowsEditing = YES;
+    _imagePicker.view.tintColor = self.view.tintColor;
     [self presentViewController:_imagePicker animated:YES completion:nil];
 }
 
@@ -245,6 +246,7 @@
     _imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     _imagePicker.delegate = self;
     _imagePicker.allowsEditing = YES;
+    _imagePicker.view.tintColor = self.view.tintColor;
     [self presentViewController:_imagePicker animated:YES completion:nil];
 }
 
