@@ -140,6 +140,9 @@
     }
     
     UIImage *image = nil;
+    if (image == nil) {
+        image = [UIImage imageNamed:@"No Photo"];
+    }
     if ([location hasPhoto]) {
         image = [location photoImage];
     }
