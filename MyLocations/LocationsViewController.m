@@ -156,6 +156,10 @@
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
     selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
     locationCell.selectedBackgroundView = selectionView;
+    
+    locationCell.photoImageView.layer.cornerRadius = locationCell.photoImageView.bounds.size.width / 2.0f;
+    locationCell.photoImageView.clipsToBounds = YES;
+    locationCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
